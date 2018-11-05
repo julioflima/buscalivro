@@ -655,8 +655,8 @@ z-index: -0;
     position: fixed;
     animation-duration: .3s;
     border-radius: 20px;
-    width: 94vw;
-    margin: 0 2vw;
+    width: 92vw;
+    margin: 2vw;
 }
 
 .chat{
