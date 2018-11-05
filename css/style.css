@@ -22,14 +22,15 @@
     --coadjuvant-2: rgba(193, 34, 34, 0.81);
     --coadjuvant-1: rgba(211, 211, 211, 0.747);
     --coadjuvant-3:rgba(193, 34, 34, 0.81);
-    --coadjuvant-4:rgb(250, 233, 79);
+    --coadjuvant-4:rgb(250, 197, 79);
     --background: rgb(250, 233, 79);
     --background-2: rgba(255, 233, 210, 0);
-    --hidden-primary-color: rgba(226, 20, 222, 0);
+    --hidden-primary-color: rgb(250, 197, 79);
     --text-color: rgba(68, 57, 57, 0.747);
     --price-color: rgb(255, 50, 30);
     --add-remove-icon: rgb(255, 50, 67);
-    --reserve_2: rgba(255, 49, 76, 0.65);
+    --msg-too: rgb(188, 233, 255);
+
     /* Angles */
     --primary_color_deg: -0deg;
     --secondary_color_deg: 90deg;
@@ -96,6 +97,8 @@ footer {
     bottom: 0vh !important;
     position: inherit!important;
 }
+
+
 
 a.mdl-layout__tab {
     color: var(--coadjuvant-1) !important;
@@ -258,6 +261,10 @@ z-index: -0;
 .mdl-card__menu {
     position: unset;
     margin: auto;
+}
+
+.mdl-textfield__input{
+    width: 92%;
 }
 
 .contact {
@@ -437,8 +444,8 @@ z-index: -0;
 
 .sdl_address {
     height: calc((100vh - 17vh)*.4);
-    position: relative;
-    /*border-bottom: 1px solid var(--reserve_2);*/
+    height: 83%;
+        /*border-bottom: 1px solid var(--reserve_2);*/
 }
 
 .sdl_pay {
@@ -644,20 +651,55 @@ z-index: -0;
 }
 
 #schedulling .budget {
-    top: var(--price-tab) !important;
-    padding-left: 1.5vw;
+    top: 6em !important;
     position: fixed;
     animation-duration: .3s;
     border-radius: 20px;
-    width: 97vw;
+    width: 94vw;
+    margin: 0 2vw;
 }
 
+.chat{
+width: 100%;
+}
 
+.msg{
+    background: var(--tab-icon);
+    width: 75%;
+    height: inherit;
+    position: relative;
+    color: white;
+    float: left;
+    right: 0em;
+    padding: 2vw;
+    margin: 2vw;
+    border-radius: 0em 15px 15px  15px;
+}
+
+.msg-too{
+    background: var(--msg-too);
+    width: 75%;
+    height: inherit;
+    position: relative;
+    color: black;
+    float: right;
+    right: 0em;
+    padding: 2vw;
+    margin: 2vw;
+    border-radius: 15px 15px  0em 15px ;
+}
 
 .tab-shrink{
     width: 85% !important;
 }
 
+#map {
+    width: 100vw;
+    height: 88vh;
+    position: relative;
+    z-index: -99;
+    overflow: hidden;
+}
 
 #schedulling .budget spam {
     text-align: center;
@@ -683,7 +725,7 @@ width: 80%;
 #schedulling #sum-cart {
     position: fixed;
     text-align: right;
-    right: 0;
+    right: .5em;
     font-size: 2.5vh;
     color: var(--coadjuvant-1);
 }
@@ -722,26 +764,53 @@ width: 80%;
     padding: 0px !important;
 }
 
-.mdl-textfield {
-    padding: 4vw 0;
+#photo {
+    box-shadow: 0 0 20px 0px #dfdfdf !important;
+    border-radius: 50em;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    float: right;
+    background: white;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v3c8mD5wc_LIZ_P8g0PnnDCOju3IdzZnURI5Q59sIESeResM);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    z-index: 9;
 }
 
 form input {
     font-size: 4vw !important;
     color: var(--reserve_2) !important;
-    margin: 1vw 8vw 1vw 4vw !important;
+    margin: 0vw 8vw 0vw 4vw !important;
     width: 92vw;
 }
 
 form label {
-    font-size: 4vw !important;
-    padding: 1vw 8vw 1vw 4vw !important;
-    width: 76vw !important;
+    padding: 0vw 8vw 0vw 4vw !important;
+    width: 100%;    
+}
+
+button{
+    margin: 0 4vw !important;
+    width: 85vw;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+
+form{
+    background: white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.album {
+    right: 7em;
+    top: .5em;
+    position: absolute;
 }
 
 .c-btn {
@@ -822,6 +891,7 @@ body {
     font-weight: 100;
     font-size: 2.5vh;
     font-family: "Cinzel" !important;
+    display: table;
 }
 
 #name_phone_label {

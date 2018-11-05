@@ -3,7 +3,8 @@
 
 <head>
     <!-- Try Hide -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0," />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, minimal-ui">
@@ -35,10 +36,8 @@
     <!--Mail Sender-->
     <script src="https://smtpjs.com/smtp.js"></script>
 
-    <!-- Datapicker -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <!-- Google Maps -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLMYXpoyQgantlFgC4et4711ZhxyHTXoM&callback=initMap"></script>
 
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
@@ -73,7 +72,7 @@
         <!-- TITLE -->
         <div class="mdl-card__title-text"></div>
         <header class="primary-color">
-            <h6>buscalivro</h6>
+            <h6>BUSCA LIVRO</h6>
         </header>
         <main class="mdl-layout__content">
             <!-- HELLO -->
@@ -88,112 +87,55 @@
                 </div>
             </section>
             <!-- SCHEDULE -->
-            <section class="mdl-layout__tab-panel " id="schedulling">
+            <section class="mdl-layout__tab-panel " id="account">
                 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-                    <main class="mdl-layout__content" id="sdlContent">
-                        <section id="sdlPage1" class=" page-content services_content">
-                            <!-- Data Picker -->
-                            <div class="demo-card-wide  datapicker animated fadeIn">
-                                <div class="mdl-card__title">
-                                    <h2 class="mdl-card__title-text">Nos diga quando você gostaria de agendar. </h2>
-                                </div>
+                    <div class="sdl_address animated fadeIn">
+                        <div class="mdl-card__title animated fadeIn">
+                            <div class="album">
+                                <div id="photo"> </div>
                             </div>
-                            <div class="animated zoomIn mdl-button mdl-js-button mdl-shadow--4dp mdl-button--fab mdl-button--mini-fab mdl-button--colored  "
-                                id="clickServices">
-                                <i class=" contact material-icons md-24 add-remove-color animated ">add</i>
-                            </div>
-                            <div class="products animated fadeIn">
-                                <div class="content cart " id="content">
-                                    <dialog class="mdl-dialog service-box">
-                                        <h4 class="mdl-dialog_title service-title">Service name</h4>
-                                        <div class="mdl-dialogcontent">
-                                            <p class='service-description'>Description</p>
-                                        </div>
-                                        <div class="mdl-dialog_actions">
-                                            <button type="button" class="mdl-button close"> Close </button>
-                                        </div>
-                                    </dialog>
-                                </div>
-                            </div>
-                            <div class="demo-card-wide space_button_1"></div>
-                            <div class="animated zoomIn mdl-button mdl-js-button mdl-shadow--4dp mdl-button--fab mdl-button--mini-fab mdl-button--colored "
-                                onclick="showingSdlPage2()" id="clickSdlPage2">
-                                <i class="contact material-icons add-remove-color animated ">keyboard_arrow_right</i>
-                            </div>
-                        </section>
-                        <section id="sdlPage2" class=" page-content services_content">
-                            <div class="sdl_address animated fadeIn">
-                                <div class="mdl-card__title animated fadeIn">
+                            <!-- Simple Textfield -->
+                            <form action="#" class="mdl-shadow--2dp">
 
-                                    <!-- Simple Textfield -->
-                                    <form action="#">
-                                        <h2 class="mdl-card__title-text" id="title_h2">Vamos agendar? Para isso, informe informe seu contato. </h2>
-
-                                        <div id="form_sch">
-                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
-                                                <input class="mdl-textfield__input" type="text" id="name_client">
-                                                <label class="mdl-textfield__label" for="sample1">Aqui, coloque seu nome.</label>
-                                            </div>
-                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
-                                                <input class="mdl-textfield__input" type="text" id="contact">
-                                                <label class="mdl-textfield__label" for="sample1">Telefone com DDD ou email.</label>
-                                            </div>
-                                            <div class="date-time-input">
-                                                <div class="mdl-textfield mdl-js-textfield" id="date-time-label">
-                                                    <input class="mdl-textfield__input" type="date" id="input_date">
-                                                    <label class="mdl-textfield__label" for="sample1">Date</label>
-                                                </div>
-                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="date-time-label">
-                                                    <input class="mdl-textfield__input" type="time" id="input_time">
-                                                    <label class="mdl-textfield__label" for="sample1">Horário</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div style="display: none" class="sdl_pay animated fadeIn">
-                                <div class="demo-card-wide mdl-card mdl-shadow--6dp animated zoomIn">
-                                    <div class="mdl-card__title">
-                                        <i class="mdl-cell mdl-cell--1-col"></i>
-                                        <h2 class="mdl-card__title-text">Veja as formas de pagamento que disponibilizamos.</h2>
+                                <h2 class="mdl-card__title-text" id="title_h2">meus dados</h2>
+                                <div id="form_sch">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
+                                        <input class="mdl-textfield__input" type="text" id="name_client">
+                                        <label class="mdl-textfield__label" for="sample1">Aqui, coloque seu
+                                            nome.</label>
                                     </div>
-                                    <h2 class="mdl-card__title-text"> </h2>
-                                </div>
-                                <i class="sdl_i_1 mdl-cell mdl-cell--1-col"></i>
-                                <i class="sdl_i_2 mdl-cell mdl-cell--1-col"></i>
-                            </div>
-                            <div style="display: none" class="sdl_team animated fadeIn">
-                                <div class="demo-card-wide mdl-card mdl-shadow--6dp animated zoomIn">
-                                    <div class="mdl-card__title">
-                                        <i class="mdl-cell mdl-cell--1-col"></i>
-                                        <h2 class="mdl-card__title-text">Nos garantiremos o melhor atendimento juntamente com a melhor equipe.</h2>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
+                                        <input class="mdl-textfield__input" type="text" id="contact">
+                                        <label class="mdl-textfield__label" for="sample1">(XX) 9 XXXX XXXX</label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="animated zoomIn mdl-button mdl-js-button mdl-shadow--4dp mdl-button--fab mdl-button--mini-fab mdl-button--colored "
-                                onclick="showingSdlPage1()" id="clickSdlPage1">
-                                <i class="contact material-icons md-24 add-remove-color animated ">keyboard_arrow_left</i>
-                            </div>
-                            <div class="animated zoomIn mdl-button mdl-js-button mdl-shadow--4dp mdl-button--fab mdl-button--mini-fab mdl-button--colored "
-                                onclick="showingSdlPage1()" id="clickSdlSend">
-                                <i class="contact material-icons  animated ">send</i>
-                            </div>
-                        </section>
-                    </main>
-                    <div  class="budget no-margin-height mdl-layout__header mdl-layout--fixed-tabs">
-                        <div id="shrink"class="mdl-layout__tab-bar budget animated slideInUp mdl-shadow--2dp">
-                            <div class="mdl-card__title">
-                                <spam class="secondary-color">R$</spam>
-                                <spam id="sum-cart">
-                                    <div class="sum-cart">0.00</div>
-                                </spam>
-                            </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
+                                        <input class="mdl-textfield__input" type="text" id="contact">
+                                        <label class="mdl-textfield__label" for="sample1">Seu email.</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
+                                        <input class="mdl-textfield__input" type="text" id="url-photo">
+                                        <label class="mdl-textfield__label" for="sample1">URL da sua photo.</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
+                                        <input class="mdl-textfield__input" type="text" id="password">
+                                        <label class="mdl-textfield__label" for="sample1">Insira sua senha.</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name_phone_label">
+                                        <input class="mdl-textfield__input" type="text" id="re_password">
+                                        <label class="mdl-textfield__label" for="sample1">Re-insira sua senha.</label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <button class="animated fadeIn  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                        Atualizar
+                                    </button>
+                                    <br>
+                                    <br>
+                            </form>
                         </div>
                     </div>
-                </div>
-            </section>
 
+            </section>
             <!-- SERVICES -->
             <section class="mdl-layout__tab-panel  no-scrolling" id="services">
                 <!-- Header scrollable. -->
@@ -293,7 +235,8 @@
                                                 <h2 class="mdl-card__title-text">Bronzeamento Natural</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -309,7 +252,8 @@
                                                 <h2 class="mdl-card__title-text">Olhos</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -325,7 +269,8 @@
                                                 <h2 class="mdl-card__title-text">Dtox Facial e Corporal</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -341,7 +286,8 @@
                                                 <h2 class="mdl-card__title-text">Maquiagem</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -357,7 +303,8 @@
                                                 <h2 class="mdl-card__title-text">Unhas</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -373,7 +320,8 @@
                                                 <h2 class="mdl-card__title-text">Massagem</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -389,7 +337,8 @@
                                                 <h2 class="mdl-card__title-text">Depilação</h2>
                                             </div>
                                             <div class="mdl-card__supporting-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                                sagittis pellentesque lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                                 <a>R$ 3~15 </a>
@@ -404,7 +353,8 @@
                                             <div class="mdl-card__title" id="spray_tan">
                                                 <h2 class="mdl-card__title-text">Pacotes</h2>
                                             </div>
-                                            <div class="mdl-card__supporting-text">d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque
+                                            <div class="mdl-card__supporting-text">d Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit. Mauris sagittis pellentesque
                                                 lacus eleifend lacinia...
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
@@ -420,72 +370,31 @@
                 </div>
             </section>
 
-            <!-- GIFT -->
-            <section class="mdl-layout__tab-panel" id="gift">
+            <!-- CHAT -->
+            <section class="mdl-layout__tab-panel" id="chat">
                 <div class="page-content">
-
+                    <div class="chat">
+                        <div class="msg">Mudei de emprego, agora trabalho até as 22h... chego tarde em casa.</div>
+                        <div class="msg-too"> Não sei se o app, chega as vias de fato, mas acho que se a gente criar um
+                            cadastro de usuário e livro e busca, via firebase já tá show.</div>
+                    </div>
                 </div>
             </section>
 
-            <!-- HELP -->
-            <section class="mdl-layout__tab-panel " id="help" onselectstart="return false">
-                <div class="page-content">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--4-col animated fadeInRight">
-                            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                                <h2 class="contact mdl-card__title-text">Deseja falar por telefone?</h2>
-                                <div class="mdl-card__menu">
-                                    <a href="tel:+556199171955">
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="contact material-icons md-48  quartenion_color">phone</i>
-                                        </button>
-                                    </a>
-                                </div>
-                                <h6 class="contact mdl-card__title-text">(61) 9917-1955</h6>
-                            </div>
-                        </div>
-                        <div class="mdl-cell mdl-cell--4-col animated fadeInLeft">
-                            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                                <h2 class="contact mdl-card__title-text">Indique e ganhe descontos.</h2>
-                                <div class="mdl-card__menu">
-                                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                        <i class="contact material-icons md-48 quartenion_color">share</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mdl-cell mdl-cell--4-col animated fadeInRight">
-                            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                                <h2 class="contact mdl-card__title-text ">Deseja saber de algo?</h2>
-                                <div class="mdl-card__menu">
-                                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="sendEmail()">
-                                        <i class="contact material-icons md-48 quartenion_color">mail</i>
-                                    </button>
-                                    <a href="tel:+556199171955">
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="contact material-icons md-48 quartenion_color">question_answer</i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mdl-cell mdl-cell--4-col animated fadeInLeft">
-                            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                                <h2 class="contact mdl-card__title-text">Aconteceu alguma coisa?</h2>
-                                <div class="mdl-card__menu">
-                                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                        <i class="contact material-icons md-48 quartenion_color">mail</i>
-                                    </button>
-                                    <a href="tel:+556199171955">
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="contact material-icons md-48 quartenion_color">question_answer</i>
-                                        </button>
-                                    </a>
-                                </div>
+            <!-- SCHEDULE -->
+            <section class="mdl-layout__tab-panel " id="schedulling">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                    <div class="budget no-margin-height mdl-layout__header mdl-layout--fixed-tabs">
+                        <div id="shrink" class="mdl-layout__tab-bar budget animated slideInDown mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <span id="sum-cart">
+                                    <i class="material-icons md-24 ">search</i>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="map"> </div>
             </section>
         </main>
 
@@ -498,10 +407,10 @@
                         <!-- Olá -->
                     </div>
                 </a>
-                <a href="#schedulling" onclick="" class=" mdl-layout__tab schedulling ">
-                    <i class="material-icons md-24" id="schedulling-icon">access_time</i>
+                <a href="#schedulling" class=" mdl-layout__tab schedulling">
+                    <i class="material-icons md-24" id="schedulling-icon">place</i>
                     <div class="icon-caption ">
-                        <!-- Agendar -->
+                        <!-- Convide -->
                     </div>
                 </a>
                 <a href="#services" onclick="show_s_prst()" class=" mdl-layout__tab services">
@@ -510,16 +419,16 @@
                         <!-- Serviços -->
                     </div>
                 </a>
-                <a href="#gift" class=" mdl-layout__tab gift">
-                    <i class="material-icons md-24" id="gift-icon">card_giftcard</i>
-                    <div class="icon-caption ">
-                        <!-- Convide -->
-                    </div>
-                </a>
-                <a href="#help" class=" mdl-layout__tab help">
-                    <i class=" material-icons md-24" id="help-icon">help</i>
+                <a href="#chat" class=" mdl-layout__tab chat">
+                    <i class=" material-icons md-24" id="chat-icon">chat_bubble</i>
                     <div class="icon-caption ">
                         <!-- Contato -->
+                    </div>
+                </a>
+                <a href="#account" onclick="" class=" mdl-layout__tab ">
+                    <i class="material-icons md-24">assignment_ind</i>
+                    <div class="icon-caption ">
+                        <!-- Agendar -->
                     </div>
                 </a>
             </div>
@@ -532,5 +441,6 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src="js/slider.js"></script>
+<script src="js/map.js"></script>
 
 </html>
