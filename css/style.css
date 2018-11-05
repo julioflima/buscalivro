@@ -767,10 +767,11 @@ width: 80%;
 #photo {
     box-shadow: 0 0 20px 0px #dfdfdf !important;
     border-radius: 50em;
-    width: 90px;
-    height: 90px;
-    position: absolute;
+    width: 70px;
+    height:70px;
+    position: inherit;
     float: right;
+    margin: 2vw 2vw 0 0 ;
     background: white;
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v3c8mD5wc_LIZ_P8g0PnnDCOju3IdzZnURI5Q59sIESeResM);
     background-repeat: no-repeat;
@@ -805,12 +806,6 @@ form{
     background: white;
     border-radius: 20px;
     position: relative;
-}
-
-.album {
-    right: 7em;
-    top: .5em;
-    position: absolute;
 }
 
 .c-btn {
@@ -892,6 +887,9 @@ form{
     font-size: 2.5vh;
     font-family: "Cinzel" !important;
     display: table;
+    width: 100%;
+    position: absolute;
+    top: 2em;
 }
 
 #name_phone_label {
