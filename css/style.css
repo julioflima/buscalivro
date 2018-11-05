@@ -29,7 +29,7 @@
     --text-color: rgba(68, 57, 57, 0.747);
     --price-color: rgb(255, 50, 30);
     --add-remove-icon: rgb(255, 50, 67);
-    --msg-too: rgb(188, 233, 255);
+    --msg-too: rgb(255, 255, 255);
 
     /* Angles */
     --primary_color_deg: -0deg;
@@ -664,7 +664,7 @@ width: 100%;
 }
 
 .msg{
-    background: var(--tab-icon);
+    background: var(--add-remove-icon);
     width: 75%;
     height: inherit;
     position: relative;
@@ -677,7 +677,7 @@ width: 100%;
 }
 
 .msg-too{
-    background: var(--msg-too);
+    background: white;
     width: 75%;
     height: inherit;
     position: relative;
