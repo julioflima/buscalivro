@@ -25,7 +25,7 @@
     --coadjuvant-4:rgb(250, 197, 79);
     --background: rgb(250, 233, 79);
     --background-2: rgba(255, 233, 210, 0);
-    --hidden-primary-color: rgb(250, 197, 79);
+    --hidden-primary-color: rgb(255, 255, 255);
     --text-color: rgba(68, 57, 57, 0.747);
     --price-color: rgb(255, 50, 30);
     --add-remove-icon: rgb(255, 50, 67);
@@ -50,6 +50,14 @@
 
 .secondary-color {
     color: var(--secondary_color_2);
+}
+
+.vo{
+    color: rgb(78, 233, 86) !important;
+}
+
+.num-vo{
+    color: rgb(233, 78, 78) !important;
 }
 
 .add-remove-color {
@@ -211,7 +219,14 @@ z-index: -0;
 }
 
 .mdl-layout__tab-bar {
+    border-radius: 20px;
     height: 6vh !important;
+    margin: 10px 10px 10px 10px;
+}
+
+
+.tinder-content{
+    height: 90vh !important;;
 }
 
 .bottom-navigator {
@@ -372,12 +387,75 @@ z-index: -0;
 
 .mdl-button--fab {
     background: white !important;
-    height: 3.5vh;
-    width: 3.5vh;
     min-width: 3.5vh;
     position: absolute;
     right: 2vw;
     top: 10vw;
+}
+.b-left{
+    float: left;
+    position: fixed;
+    left: 10px;
+    top: 82vh;  
+    
+}
+
+.b-right{
+    float: right;
+    position: fixed;
+    right: 10px;
+    top: 82vh;
+
+}
+
+.tinder{
+    border-radius: 20px;
+
+}
+
+.photo{
+    background: white;
+    width: 96%;
+    height: auto;
+    position: relative;
+    color: black;
+    float: right;
+    right: 0em;
+    padding: 2vw;
+    margin: 2vw;
+    border-radius: 15px 15px  0px 0px ;
+    background: url('https://res-4.cloudinary.com/enjoei/image/upload/c_fit,fl_lossy.progressive,h_1200,q_70,w_1200/kfculhcv7xz8lxu7rlqg.jpg') center / cover;
+
+}
+
+.description{
+    background: white;
+    width: 90.5%;
+    top: 49vh;
+    position: absolute;
+    padding: 2vw;
+    margin: 2vw;
+    border-radius: 0px 0px  15px 15px ;
+}
+
+.inner{
+    background: white;
+    width: 96%;
+    height: fit-content;
+    padding: 2vw;
+    margin: 2vw;
+}
+
+.price{
+    color: rgb(62, 219, 109);
+    font-weight: bold;
+}
+
+.state{
+    font-weight: bold;
+    width: 100%;
+    color: rgb(209, 92, 92);
+    text-align: right;
 }
 
 .presentation {
